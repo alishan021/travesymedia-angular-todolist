@@ -1,0 +1,10 @@
+
+<app-add-task (onAddTask)="addTask($event)"></app-add-task>
+<br><br>
+@for (task of tasks; track $index) {
+    <app-task-item 
+        [task]="task"
+        (onDeleteTask)="deleteTask(task)"
+        (onToggleReminder)="ToggleReminder(task)"
+    >{{ $index + 1 }}. {{ task.text }}</app-task-item>
+}
